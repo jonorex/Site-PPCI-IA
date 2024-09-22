@@ -1,0 +1,422 @@
+/* Estilos gerais */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*background-color: #002244; /* Azul escuro */
+    padding: 10px 20px;
+}
+
+.navbar .logo img {
+    width: 60px; /* Ajuste o tamanho da logo conforme necessário */
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.navbar .logo h1 {
+    color: #002244;
+    font-size: 2em;
+    font-weight: 500;
+    font-family: "Orbitron", sans-serif;
+    
+}
+
+.separator {
+    margin-left: 10px;
+    width: 1px; /* Largura do separador */
+    height: 60px; /* Altura total do container */
+    background-color: #DDD; /* Cor do separador (branco no caso) */
+    display: flex;
+}
+
+.logo {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    
+}
+
+.navbar .menu li a {
+    color: #002244;;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.h-icon {
+    display: none;
+    color: #002244;
+
+}
+
+
+/* Esconder o menu em dispositivos móveis */
+@media (max-width: 768px) {
+    .navbar .menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 10%;
+        background-color: white;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .h-icon {
+        display: block;
+        color: #002244;
+    }
+
+    .h-icon a {
+        color: #002244;
+        font-size: 1.5em;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    /* Mostrar o menu quando o logo for clicado */
+    .navbar.active .menu {
+        display: flex;
+    }
+
+    /* Estilizar o logo para dispositivos móveis */
+    .navbar .logo {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .navbar .logo h1 {
+        font-size: 1.5em;
+    }
+}
+
+/* Seção de Apresentação */
+.presentation {
+    display: flex;
+    padding: 20px;
+    background-color: #011c43;
+    color: white;
+}
+
+.presentation-left img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+}
+
+.presentation-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+    
+}
+
+.presentation-right h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3em;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3em;
+}
+
+.presentation-right h2 {
+    font-size: 1.5em;
+}
+
+.presentation-right h3 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.presentation-right .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+    
+}
+
+.buttons button {
+    background-color: #1988ce; /* Azul claro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: white;
+    color: #002244; /* Azul escuro */
+    border: 2px solid #002244;
+}
+
+@media (max-width: 768px) { 
+    .presentation {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .presentation-right {
+        padding: 0;
+    }
+}
+
+
+
+
+/* Seção de Cronograma */
+
+.cronograma {
+    font-family: Arial, sans-serif;
+    background-color: #002147;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.cronograma h1 {
+    color: white;
+}
+
+.schedule-container {
+    display: flex;
+    margin-bottom: 20px;
+    
+}
+
+.day-column {
+    background-color: #f8a833;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100px;
+    color: white;
+}
+
+.day-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.day-text-vertical {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.date {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.events-column {
+    
+    padding-left: 10px;
+    display: grid;
+    
+    gap: 10px;
+}
+
+.event-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.event-time, .event-hour {
+    display: flex;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 2px solid #002147;
+    width: 250px; /* Define largura fixa para as caixas */
+    word-wrap: break-word; /* Garante que o texto quebra e não aumente a largura */
+    overflow-wrap: break-word;
+    text-align: center; /* Centraliza o texto */
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    color: #002144;
+}
+
+/* Define um tamanho máximo para as caixas */
+.event-time {
+    height: auto; /* Altura ajustável conforme o texto */
+}
+
+.event-hour {
+    height: auto; /* Altura ajustável conforme o texto */
+}
+
+@media (max-width: 768px) { 
+    .event-row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .schedule-container {
+        display: grid;
+        gap: 10px;
+        flex-direction: column;
+        
+    }
+    .day-column {
+        width: auto;
+    }
+
+    .events-column {
+        padding: 0;
+        display: block;
+        gap: 10px;
+    }
+
+    .event-row {
+        gap:  10px;
+        display: flex;
+    }
+
+    .cronograma {
+        justify-content: space-between;
+        
+    }
+
+    .day-text-vertical {
+        writing-mode: horizontal-tb;
+        transform: rotate(360deg);
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+/* Seção Desafios */
+
+.desafios-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+    color: #002144;
+    
+}
+
+.desafios {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.desafio-item {
+    text-align: center;
+    width: 45%;
+}
+
+.desafio-item img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+}
+
+.desafio-item button {
+    background-color: #1988ce;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.desafio-item button:hover {
+    background-color: white;
+    color: #002244;
+    border: 2px solid #002244;
+}
+
+.desafio-desc {
+    text-align: left;
+}
+
+.desafio-desc p {
+    text-align: justify;
+    max-width: 500px;
+    min-height: 200px;
+}
+
+@media (max-width: 768px) { 
+    .desafios {
+        flex-direction: column;
+    }
+
+    .desafio-item {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 60px 50px;
+    background-color: white;
+    color: #002244;
+}
+
+.social-icons {
+    padding-top: 50px;
+}
+
+footer .social-icons a {
+    font-size: 30px;
+    color: #002244;
+    margin: 0 15px;
+}
+
+footer .social-icons a:hover {
+    color: #00BFFF;
+}
+
+footer .social-icons a:nth-child(2):hover {
+    color: #FF0000;
+}
+
+footer .social-icons a:nth-child(3):hover {
+    color: #C13584;
+}
